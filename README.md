@@ -1,62 +1,72 @@
-# alx-project-0x14
- The project focuses on creating a responsive, well-structured web application built with Next.js, TypeScript and Tailwind CSS with proper API integration which allows users to browse movies from the MoviesDatabase API, view movie details, and search for films by year or genre.
+# alx-pwa-0x01
+This project transforms the Cine Seek movie application into a Progressive Web App (PWA) using Next.js and the next-pwa package. The implementation focuses on enabling offline capabilities, installability, and improved performance through service workers while maintaining the core movie browsing functionality.
 
 
-## API Overview
-The MoviesDatabase API provides access to data on over 9 million movies, TV series, and episodes—including ratings, cast, plots, images, and more.
+# Cine Seek – Progressive Web App (PWA)
 
-## Version
-v1
+This project transforms the **Cine Seek** movie browsing application into a **Progressive Web App (PWA)** using **Next.js** along with the **@ducanh2912/next-pwa** package. The goal is to enhance user experience with offline access, installability, and faster performance through caching strategies — all while maintaining the core movie discovery features.
 
-## Available Endpoints
-- `GET /search/movie` – Search for movies by title  
-- `GET /search/tv` – Search for TV shows by name  
-- `GET /movies/{id}` – Get movie details  
-- `GET /series/{id}` – Get TV series details  
-- `GET /movies/{id}/cast` – Retrieve cast and crew  
-- `GET /movies/{id}/similar` – Suggested titles (if available)
+---
 
-## Request and Response Format
-Requests are made over HTTPS; responses are in JSON.  
-Example:
-```http
-GET /search/movie?query=Inception&page=1
-Authorization: Bearer YOUR_API_KEY
-```
-Response:
-```json
-{
-  "page": 1,
-  "total_results": 205,
-  "results": [
-    {
-      "id": 27205,
-      "title": "Inception",
-      "release_year": 2010,
-      "overview": "A thief who steals corporate secrets …",
-      "poster_url": "https://…",
-      "rating": 8.8
-    }
-  ]
-}
-```
+## 🧠 Learning Objectives
 
-## Authentication
-Include an API key:
-- In header: `Authorization: Bearer YOUR_API_KEY`  
-- Or as query parameter: `api_key=YOUR_API_KEY`  
+By completing this project, you will:
 
-## Error Handling
-Handle these responses:
-- 401 Unauthorized – invalid API key  
-- 400 Bad Request – missing or incorrect parameters  
-- 404 Not Found – no matching record  
-- 429 Too Many Requests – exceeded rate limit  
-Each error includes a JSON `status_code` and `status_message`.
+- Understand the fundamentals and benefits of Progressive Web Apps
+- Implement Service Workers in a Next.js project
+- Configure a Web App Manifest for installability
+- Set up effective caching strategies for offline use
+- Deploy and test a PWA in production environments (e.g., Vercel)
 
-## Usage Limits and Best Practices
-- Respect rate limits and implement retry/back‑off logic  
-- Use pagination to manage large result sets  
-- Cache results to minimize repeated calls  
-- Apply filtering to reduce payload and improve performance  
-- Adhere to API usage policies and avoid misuse
+---
+
+## 🔑 Key PWA Concepts
+
+| Concept              | Description                                                                 |
+|---------------------|-----------------------------------------------------------------------------|
+| **PWA**              | Web apps that behave like native apps with offline, install, and cache features |
+| **Service Worker**   | Background JS file that controls caching and offline behavior               |
+| **Web App Manifest** | JSON file containing app name, icons, colors, theme, and install specs       |
+| **Cache Strategies** | Methods for storing assets to load offline or faster                        |
+| **Install Prompt**   | Browser prompt allowing users to "Add to Home Screen"                       |
+
+---
+
+## 🛠 Tools & Technologies
+
+- **Next.js** – React framework for server-side rendering and static site generation
+- **@ducanh2912/next-pwa** – PWA plugin to enable service workers in Next.js
+- **Webpack** – Module bundler for advanced configuration (optional/custom)
+- **Vercel** – Hosting and deployment platform for Next.js applications
+- **PWA Manifest Generator** – Tool to generate icons and manifest.json
+
+---
+
+## ✅ Real-World Use Case
+
+The Cine Seek PWA showcases how media streaming / browsing platforms benefit from PWA technology:
+
+- **Offline Access** – Browse saved movie details even without internet
+- **Improved Performance** – Faster load times with cached assets
+- **Installability** – Users can install the app on their phone or desktop
+- **Cross-Device** – Works across browsers and devices with a single codebase
+- **Discoverability** – PWAs can appear in search engines and (when packaged) app stores
+
+Major companies like **Netflix**, **Disney+**, and **Spotify Lite** use PWAs to deliver lightweight, app-like experiences without requiring app store downloads.
+
+---
+
+## 🚀 Project Setup (Example)
+
+> ⚠️ Replace/configure this section based on your actual code and steps if different.
+
+```bash
+# 1. Clone repository
+git clone https://github.com/PRINCE-droid412/alx-pwa-0x01.git
+cd cine-seek-pwa
+
+# 2. Install dependencies
+npm install
+
+# 3. Run the development server
+npm run dev
